@@ -60,7 +60,12 @@ find_lr_history = model.fit(X_train,
                     epochs=20,
                     callbacks =[lr_scheduler])
  ```
+ 
 # Evaluate technique
+### Classification model predict
+```
+tf.round(model.predict(X_test))
+```
 ### Model loss x accuracy plot (it's depend on ur model setting but the idea is plot the model thing)
 ```
 pd.DataFrame(history.history).plot()
