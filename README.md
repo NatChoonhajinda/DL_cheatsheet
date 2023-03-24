@@ -61,6 +61,10 @@ find_lr_history = model.fit(X_train,
                     callbacks =[lr_scheduler])
  ```
 # Evaluate technique
+### Model loss x accuracy plot (it's depend on ur model setting but the idea is plot the model thing)
+```
+pd.DataFrame(history.history).plot()
+```
 ### confusion_matrix
 ```
 from sklearn.metrics import confusion_matrix
