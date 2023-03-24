@@ -21,6 +21,11 @@ history = model.fit(tf.constant(X),y,epochs=100)
 ```
 
 # Evaluate technique
+### confusion_matrix
+```
+from sklearn.metrics import confusion_matrix
+confusion_matrix(np.array(model.predict(X_test < 0.5).astype('int32')), y_test,labels=[1, 0])
+```
 ### plot_decision_boundary
 use to plot a decision of model 
 
