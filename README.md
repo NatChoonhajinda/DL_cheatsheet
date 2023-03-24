@@ -1,6 +1,21 @@
 # DL_cheatsheet
 
 # Models
+### Simple Regression Classification
+```
+model = tf.keras.Sequential([
+  tf.keras.layers.Dense(1)
+])
+
+# Compile the model
+model.compile(loss=tf.keras.losses.mae, # mae is short for mean absolute error
+              optimizer=tf.keras.optimizers.SGD(), # SGD is short for stochastic gradient descent
+              metrics=["mae"])
+
+# Fit the model
+# model.fit(X, y, epochs=5) # this will break with TensorFlow 2.7.0+
+model.fit(tf.expand_dims(X, axis=-1), y, epochs=5)
+```     
 ### Simple Binary Classification
 
 ```
