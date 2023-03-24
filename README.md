@@ -19,7 +19,32 @@ metrics = ["accuracy"])
 history = model.fit(tf.constant(X),y,epochs=100)
 
 ```
+### Multiple Classification ( with a LR callback )
 
+```
+tf.random.set_seed(seed = 32)
+model = tf.keras.models.Sequential([
+tf.keras.layers.Flatten(input_shape=(28,28)),
+tf.keras.layers.Dense(4, activation='relu'),
+tf.keras.layers.Dense(4, activation='relu'),
+tf.keras.layers.Dense(10, activation='softmax')
+
+])
+
+lr_scheduler = tf.keras.callbacks.LearningRateScheduler(lambda epoch: 1e-3 *10**(epoch/20))
+
+model.compile(loss = tf.keras.losses.CategoricalCrossentropy(),
+                    optimizer = tf.keras.optimizers.Adam(),
+                      metrics = ["accuracy"]
+                      )
+
+
+
+find_lr_history = model.fit(X_train,
+                    y_train,
+                    epochs=20,
+                    callbacks =[lr_scheduler])
+ ```
 # Evaluate technique
 ### confusion_matrix
 ```
