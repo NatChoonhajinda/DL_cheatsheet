@@ -70,6 +70,15 @@ tf.round(model.predict(X_test))
 ```
 pd.DataFrame(history.history).plot()
 ```
+```
+plt.plot(pd.DataFrame(history.history)['loss'],label = "loss")
+plt.plot(pd.DataFrame(history.history)['accuracy'],label = "accuracy")
+plt.legend()
+plt.figure()
+plt.plot(pd.DataFrame(history.history)['val_loss'],label = "val_loss")
+plt.plot(pd.DataFrame(history.history)['val_accuracy'],label = "val_accuracy")
+plt.legend()
+```
 ### confusion_matrix
 ```
 from sklearn.metrics import confusion_matrix
