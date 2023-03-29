@@ -1,0 +1,14 @@
+```
+datagen = ImageDataGenerator(rescale = 1/255.)
+Train_data = datagen.flow_from_directory(
+                                        directory = r'C:\Users\wiz\Train_test_split_multiclass\train',
+                                        class_mode = 'categorical',
+                                        batch_size =32,
+                                        target_size = (144,144))
+
+val_data = datagen.flow_from_directory(
+                                        directory = r'C:\Users\wiz\Train_test_split_multiclass\test',
+                                        class_mode = 'categorical',
+                                        batch_size =32,
+                                        target_size = (144,144))
+```                                       
